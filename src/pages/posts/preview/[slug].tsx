@@ -90,6 +90,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         props: {
             post,
         },
-        redirect: 30 * 60 // 30 min
+        redirect: 60 * 30 // 30 min
     }
 }
