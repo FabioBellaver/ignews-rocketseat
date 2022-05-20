@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next"
 import { useSession } from "next-auth/react"
+import { redirect } from "next/dist/server/api-utils"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -19,7 +20,7 @@ interface PostPreviewProps {
 
 export default function PostPreview({ post }: PostPreviewProps) {
 
-    const {data: session} = useSession()
+    const { data: session } = useSession()
     const router = useRouter()
 
     useEffect(() => {
@@ -40,13 +41,13 @@ export default function PostPreview({ post }: PostPreviewProps) {
                     <time>{post.updatedAt}</time>
                     <div
                         className={`${styles.postContent} ${styles.previewContent}`}
-                        dangerouslySetInnerHTML={{ __html: post.content }} 
+                        dangerouslySetInnerHTML={{ __html: post.content }}
                     />
 
                     <div className={styles.continueReading}>
                         Wanna continue reading?
                         <Link href="/">
-                        <a href="/">Subscribe now</a>
+                            <a href="/">Subscribe now</a>
                         </Link>
                         <span>🤗</span>
                     </div>
@@ -88,6 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             post,
-        }
+        },
+        redirect: 30 * 60 // 30 min
     }
 }
