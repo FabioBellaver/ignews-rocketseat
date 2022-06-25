@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
-import { Header } from '../components/header/header';
 import { SessionProvider } from 'next-auth/react'
 
 import '../styles/global.scss';
+import { Header } from '../components/header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

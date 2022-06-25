@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next"
 import { useSession } from "next-auth/react"
-import { redirect } from "next/dist/server/api-utils"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
