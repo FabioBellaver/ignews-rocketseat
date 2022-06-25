@@ -2944,7 +2944,7 @@ jest-message-util@^28.1.1:
 
 jest-mock@^28.1.1:
   version "28.1.1"
-  resolved "https://registry.npmjs.org/jest-mock/-/jest-mock-28.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-28.1.1.tgz#37903d269427fa1ef5b2447be874e1c62a39a371"
   integrity sha512-bDCb0FjfsmKweAvE09dZT59IMkzgN0fYBH6t5S45NoJfd2DHkS3ySG2K+hucortryhO3fVuXdlxWcbtIuV/Skw==
   dependencies:
     "@jest/types" "^28.1.1"
