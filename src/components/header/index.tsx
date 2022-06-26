@@ -10,7 +10,7 @@ export function Header() {
       <div className={styles.headerContent}>
         <Link href="/">
           <a>
-            <Image src="/images/logo.svg" alt="ig.news logo" />
+            <img src="/images/logo.svg" alt="ig.news logo" />
           </a>
         </Link>
         <nav>

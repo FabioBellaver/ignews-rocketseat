@@ -34,7 +34,7 @@ export default function Home({ product }: HomeProps) {
           <SubscribeButton />
         </section>
 
-        <Image src="/images/avatar.svg" alt="girl coding" />
+        <img src="/images/avatar.svg" alt="girl coding" />
       </main>
     </>
   );
