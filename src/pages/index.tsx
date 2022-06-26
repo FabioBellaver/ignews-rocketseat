@@ -12,7 +12,8 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
-  return (
+
+  return (  
     <>
       <Head>
         <title>Home | ig.news</title>
