@@ -13,7 +13,7 @@ type User = {
   };
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const session = await getSession({ req });
 

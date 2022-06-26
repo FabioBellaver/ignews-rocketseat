@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ActiveLink } from "../activeLink";
 import { SignInButton } from "../sign-in-button";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
       <div className={styles.headerContent}>
         <Link href="/">
           <a>
-            <img src="/images/logo.svg" alt="ig.news logo" />
+            <Image src="/images/logo.svg" alt="ig.news logo" />
           </a>
         </Link>
         <nav>
