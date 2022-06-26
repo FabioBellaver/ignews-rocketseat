@@ -14,7 +14,7 @@ describe("SubscribeButton component", () => {
       data: null,
       status: "unauthenticated",
     });
-    render(<SubscribeButton priceId="" />);
+    render(<SubscribeButton/>);
     expect(screen.getByText("Subscribe now")).toBeInTheDocument();
   });
   it("redirects user to sign in when not authenticated", () => {
@@ -24,7 +24,7 @@ describe("SubscribeButton component", () => {
       data: null,
       status: "unauthenticated",
     });
-    render(<SubscribeButton priceId="" />);
+    render(<SubscribeButton/>);
     const subscribeButton = screen.getByText("Subscribe now");
     fireEvent.click(subscribeButton);
     expect(signInMocked).toHaveBeenCalled();
@@ -44,9 +44,9 @@ describe("SubscribeButton component", () => {
       },
       status: "authenticated",
     });
-    render(<SubscribeButton priceId="" />);
+    render(<SubscribeButton/>);
     const subscribeButton = screen.getByText("Subscribe now");
     fireEvent.click(subscribeButton);
-    expect(pushMock).toHaveBeenCalled();
+    expect(pushMock).toHaveBeenCalledWith("/posts");
   });
 });
