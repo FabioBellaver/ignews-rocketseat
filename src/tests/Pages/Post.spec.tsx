@@ -7,7 +7,7 @@ import { getSession } from "next-auth/react";
 const post = {
   slug: "my-new-post",
   title: "My new post",
-  content: "<p>Post excerpt</p>",
+  content: "<p>Post content</p>",
   updatedAt: "12/12/2015",
 };
 
@@ -18,7 +18,7 @@ describe("Pot page", () => {
   it("renders correctly", () => {
     render(<Post post={post} />);
     expect(screen.getByText("My new post")).toBeInTheDocument();
-    expect(screen.getByText("Post excerpt")).toBeInTheDocument();
+    expect(screen.getByText("Post content")).toBeInTheDocument();
   });
   it("redicts user if no subscription is found", async () => {
     const getSessionMocked = mocked(getSession);
@@ -47,5 +47,23 @@ describe("Pot page", () => {
         last_publication_date: "04-01-2021",
       }),
     } as any);
+    getSessionMocked.mockResolvedValueOnce({
+      activeSubscription: "fake-active-subscription",
+    } as any);
+    const response = await getServerSideProps({
+      params: { slug: "my-new-post" },
+    } as any);
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          post: {
+            slug: "my-new-post",
+            title: "My new post",
+            content: "<p>Post content</p>",
+            updatedAt: "01 de abril de 2021",
+          },
+        },
+      })
+    );
   });
 });
